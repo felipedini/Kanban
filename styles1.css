@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #121212; /* Fundo escuro para um efeito moderno */
+}
+
+header {
+  background-color: rgba(20, 20, 20, 0.8);
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.column {
+  background-color: rgba(20, 20, 20, 0.8);
+  border-radius: 10px;
+  width: 15%;
+  padding: 1rem;
+  max-height: 600px; /* Definindo altura máxima para cada coluna */
+  overflow-y: auto; /* Ativa a rolagem vertical */
+  box-shadow: 0 0 15px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+  transition: transform 0.3s; /* Transição suave para o efeito de zoom */
+}
+.column:hover {
+  transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}
+/* Estilizando a barra de rolagem para cada coluna */
+.column::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.column::-webkit-scrollbar-thumb {
+  background-color: rgba(72, 209, 204, 0.8); /* Cor da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+.column::-webkit-scrollbar-track {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Cor do trilho da barra de rolagem */
+}
+
+.column {
+  scrollbar-width: thin; /* Barra de rolagem fina no Firefox */
+  scrollbar-color: rgba(72, 209, 204, 0.8) rgba(255, 255, 255, 0.1); /* Cor da barra e do trilho no Firefox */
+}
+
+.column h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #48d1cc; /* Cor do texto em neon */
+  text-shadow: 0 0 5px rgba(72, 209, 204, 0.8), 0 0 10px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
+}
+
+.block-container {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+}
+
+.block {
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo semitransparente */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 5px solid;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
+  transition: transform 0.2s; /* Transição suave */
+}
+
+.block:hover {
+  transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
+}
+
+.block.low {
+  border-color: rgba(0, 255, 0, 0.8); /* Verde neon */
+}
+
+.block.medium {
+  border-color: rgba(255, 165, 0, 0.8); /* Laranja neon */
+}
+
+.block.high {
+  border-color: rgba(255, 0, 0, 0.8); /* Vermelho neon */
+}
+
+.add-block {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(72, 209, 204, 0.5);
+  max-width: 500px;
+  margin-left: 200px;
+  margin-right: 45%;
+  margin-top: 300px;
+}
+
+.add-block.active {
+  display: block;
+}
+
+.add-block h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #48d1cc; /* Cor do texto em neon */
+  text-shadow: 0 0 5px rgba(72, 209, 204, 0.8), 0 0 10px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
+}
+
+.add-block input,
+.add-block textarea,
+.add-block select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo dos inputs */
+  color: #000000; /* Cor do texto */
+  transition: border-color 0.3s; /* Transição suave na borda */
+}
+
+.add-block input:focus,
+.add-block textarea:focus,
+.add-block select:focus {
+  border-color: #48d1cc; /* Borda em neon ao focar */
+  outline: none; /* Remove o contorno padrão */
+}
+
+.add-block button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 0 auto; /* Centraliza o botão */
+  display: block; /* Garante que o botão seja tratado como um bloco */
+}
+
+.add-block button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1), 0 0 30px rgba(72, 209, 204, 0.8); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+.add-block {
+  position: fixed; /* Deixa o formulário flutuante */
+  top: 20px; /* Distância do topo da página */
+  right: 20px; /* Distância da direita da página */
+  background-color: rgba(30, 30, 30, 0.9); /* Cor de fundo */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px; /* Espaçamento interno */
+  box-shadow: 0 4px 8px rgba(72, 209, 204, 0.5); /* Sombra */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.column h2 {
+  cursor: pointer; /* Indica que o título é clicável */
+}
+
+.edit-title-input {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.export-btn {
+  float: left;
+  background-color: rgba(83, 122, 163, 0.8);
+  color: rgb(255, 255, 255);
+  border: 1px;
+  border-radius: 60px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  text-align: center; /* Adiciona essa linha */
+  padding: 10px 20px; /* Adiciona essa linha */
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+}
+
+.export-btn:hover {
+  background-color: rgba(57, 87, 184, 0.8);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+.edit-btn {
+  background-color: rgba(76, 175, 80, 0.8); /* Verde */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+}
+.edit-btn:hover {
+  background-color: rgba(76, 175, 80, 1); /* Verde mais intenso */
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+.delete-btn {
+  background-color: rgba(244, 67, 54, 0.8); /* Vermelho */
+  float: right;
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: -28px 2px 4px 4px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+}
+
+.delete-btn:hover {
+  background-color: rgba(244, 67, 54, 1); /* Muda a cor ao passar o mouse */
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+#logout-btn {
+  background-color: rgba(57, 36, 240, 0.8); /* Azul */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
+  z-index: 1001; /* Aumenta o z-index para garantir que fique acima de outros elementos */
+}
+
+#logout-btn:hover {
+  background-color: rgba(206, 48, 48, 0.8); /* Muda a cor ao passar o mouse */
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.column:hover {
+  transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+}

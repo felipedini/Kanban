@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #121212; /* Fundo escuro para destacar o efeito neon */
+  overflow: hidden; /* Remove a barra de rolagem */
+}
+#background-video {
+  position: center;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+  object-fit: cover; /* Faz o vídeo cobrir o fundo de forma proporcional */
+}
+/* Container da logo e título */
+.login-container {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
+  background-color: rgba(30, 30, 30, 0.8); /* Fundo escuro e semitransparente */
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(72, 209, 204, 0.8), 0 0 40px rgba(72, 209, 204, 0.6); /* Efeito neon */
+  width: 100%; /* Tornar o container responsivo */
+  max-width: 400px;
+  max-height: 500px;
+}
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #48d1cc; /* Cor do texto em neon */
+  text-shadow: 0 0 10px rgba(72, 209, 204, 0.8),
+    0 0 20px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
+  margin-top: 5px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #48d1cc; /* Borda em neon */
+  border-radius: 5px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo dos inputs */
+  color: #ffffff; /* Cor do texto */
+  transition: border-color 0.3s; /* Transição suave na borda */
+}
+
+input:focus {
+  border-color: #5dec7c; /* Borda em neon ao focar */
+  outline: none; /* Remove o contorno padrão */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+  box-shadow: 0 0 10px rgba(72, 209, 204, 0.8), 0 0 20px rgba(72, 209, 204, 0.6); /* Efeito neon no botão */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+button:hover {
+  background-color: #5dec7c;
+  box-shadow: 0 0 20px rgba(72, 209, 204, 1), 0 0 30px rgba(72, 209, 204, 0.8); /* Intensifica o efeito neon ao passar o mouse */
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+    max-width: 90%; /* Reduzir o tamanho para telas menores */
+  }
+
+  input {
+    font-size: 14px; /* Ajustar o tamanho da fonte para telas pequenas */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px; /* Ajuste no botão para se adaptar a telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  input {
+    font-size: 12px; /* Menor tamanho para dispositivos móveis */
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px; /* Reduzindo o botão em telas muito pequenas */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+    margin-top: 5px;
+  }
+}
+@media (max-width: 480px) {
+  #background-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .login-container {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  input {
+    font-size: 12px; /* Menor tamanho para dispositivos móveis */
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px; /* Reduzindo o botão em telas muito pequenas */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+  }
+}
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Certifique-se de que fique acima de tudo */
+}
+
+#preloader.hidden {
+  display: none; /* Esconde o preloader após o carregamento */
+}
