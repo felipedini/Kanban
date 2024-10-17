@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <title>CRM Vision Inside</title>
+    <link rel="stylesheet" href="styles1.css" />
+    <style>
+      /* Adicione o estilo do formulário e do cabeçalho aqui */
+      .add-block {
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        position: absolute; /* Necessário para que o arrasto funcione */
+        background-color: #f9f9f9;
+        z-index: 10; /* Para garantir que o formulário esteja acima de outras camadas */
+      }
+
+      .header {
+        background-color: #007bff; /* Cor do cabeçalho */
+        color: white;
+        padding: 10px;
+        cursor: move; /* Indica que a área pode ser movida */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CRM Vision Inside</h1>
+      <button id="logout-btn">Sair</button>
+    </header>
+
+    <div class="kanban-board">
+      <!-- Colunas do Kanban -->
+      <div class="column" id="backlog">
+        <div ondblclick="editTitle(this)">
+          <button class="export-btn" onclick="exportToExcel('backlog')">
+            Exportar para Excel
+          </button>
+          <h2>Início</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+      <div class="column" id="to-do">
+        <div ondblclick="editTitle(this)">
+          <button class="export-btn" onclick="exportToExcel('to-do')">
+            Exportar para Excel
+          </button>
+          <h2>Em Pagamento</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+      <div class="column" id="in-progress">
+        <div ondblclick="editTitle(this)">
+          <button class="export-btn" onclick="exportToExcel('in-progress')">
+            Exportar para Excel
+          </button>
+          <h2>Pagamento Efetuado</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+      <div class="column" id="review">
+        <div ondblclick="editTitle(this)">
+          <button class="export-btn" onclick="exportToExcel('review')">
+            Exportar para Excel
+          </button>
+          <h2>Concluído Enviar Planilha</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+      <div class="column" id="done">
+        <div ondblclick="editTitle(this)">
+          <button class="export-btn" onclick="exportToExcel('done')">
+            Exportar para Excel
+          </button>
+          <h2>Planilha Vitalícia</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+      <div class="column" id="archived">
+        <div ondblclick="editTitle(this)">
+          </button>
+          <h2>Arquivado</h2>
+        </div>
+        <div class="block-container"></div>
+      </div>
+    </div>
+
+    <!-- Formulário para adicionar blocos -->
+    <div class="add-block">
+      <div class="header"></div>
+      <!-- Cabeçalho para arrastar -->
+      <input type="text" id="block-name" placeholder="Nome" />
+      <input type="text" id="block-number" placeholder="Número Telefone" />
+      <textarea id="block-note" placeholder="Anotações"></textarea>
+      <select id="block-priority">
+        <option value="low">Baixa</option>
+        <option value="medium">Média</option>
+        <option value="high">Alta</option>
+      </select>
+      <button id="add-block-btn">Adicionar</button>
+    </div>
+    <script src="script1.js"></script>
+  </body>
+</html>

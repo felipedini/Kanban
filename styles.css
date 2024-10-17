@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #2e2c2c;
+  overflow: hidden;
+}
+#background-video {
+  position: center;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+  object-fit: cover; /* Faz o vídeo cobrir o fundo de forma proporcional */
+}
+/* Container da logo e título */
+.login-container {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%; /* Tornar o container responsivo */
+  max-width: 400px;
+  max-height: 500px;
+  background-color: rgba(168, 240, 245, 0.534); /* Fundo semitransparente */
+}
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+button:hover {
+  background-color: #5dec7c;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+    max-width: 90%; /* Reduzir o tamanho para telas menores */
+  }
+
+  input {
+    font-size: 14px; /* Ajustar o tamanho da fonte para telas pequenas */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px; /* Ajuste no botão para se adaptar a telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  input {
+    font-size: 12px; /* Menor tamanho para dispositivos móveis */
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px; /* Reduzindo o botão em telas muito pequenas */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+  }
+}
+@media (max-width: 480px) {
+  #background-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .login-container {
+    padding: 10px;
+    max-width: 95%;
+  }
+
+  input {
+    font-size: 12px; /* Menor tamanho para dispositivos móveis */
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px; /* Reduzindo o botão em telas muito pequenas */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+  }
+}
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Certifique-se de que fique acima de tudo */
+}
+
+#preloader.hidden {
+  display: none; /* Esconde o preloader após o carregamento */
+}

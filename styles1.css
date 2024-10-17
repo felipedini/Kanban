@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0000;
+}
+
+header {
+  background-color: #141414a1;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  text-align: center;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.column {
+  background-color: #141414a1;
+  border-radius: 10px;
+  width: 15%;
+  padding: 1rem;
+  max-height: 600px; /* Definindo altura máxima para cada coluna */
+  overflow-y: auto; /* Ativa a rolagem vertical */
+}
+
+/* Estilizando a barra de rolagem para cada coluna */
+.column::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.column::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Cor da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+.column::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor do trilho da barra de rolagem */
+}
+
+.column {
+  scrollbar-width: thin; /* Barra de rolagem fina no Firefox */
+  scrollbar-color: #007bff #f1f1f1; /* Cor da barra e do trilho no Firefox */
+}
+
+.column h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.block-container {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.block {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 5px solid;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+.block.low {
+  border-color: green;
+}
+
+.block.medium {
+  border-color: orange;
+}
+
+.block.high {
+  border-color: red;
+}
+
+.add-block {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin-left: 200px;
+  margin-right: 45%;
+  margin-top: 300px;
+}
+/* Exibir a janela quando for necessário */
+.add-block.active {
+  display: block;
+}
+.add-block h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.add-block input,
+.add-block textarea,
+.add-block select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.add-block button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-block button:hover {
+  background-color: #0056b3;
+}
+
+.add-block {
+  position: fixed; /* Deixa o formulário flutuante */
+  top: 20px; /* Distância do topo da página */
+  right: 20px; /* Distância da direita da página */
+  background-color: white; /* Cor de fundo */
+  border: 1px solid #ccc; /* Borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px; /* Espaçamento interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+.column h2 {
+  cursor: pointer; /* Indica que o título é clicável */
+}
+
+.edit-title-input {
+  width: 100%;
+  font-size: 1.5em;
+}
+.export-btn {
+  float: left;
+  background-color: #537aa3b0;
+  color: rgb(2, 2, 2);
+  border: 1px;
+  border-radius: 60px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  text-align: center; /* Adiciona essa linha */
+  padding: 10px 20px; /* Adiciona essa linha */
+}
+.export-btn:hover {
+  background-color: #3957b8a1;
+  color: rgb(0, 0, 0);
+}
+.edit-btn {
+  background-color: #4caf50; /* Verde */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+}
+.edit-btn:hover {
+  background-color: #ac29e0; /* Muda a cor ao passar o mouse */
+}
+.delete-btn {
+  background-color: #f44336; /* Vermelho */
+  float: right;
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: -28px 2px 4px 4px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+}
+.delete-btn:hover {
+  background-color: #f44336; /* Muda a cor ao passar o mouse */
+}
+#logout-btn {
+  background-color: #3924f0; /* Vermelho */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 0; /* Remover espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px; /* Tamanho da fonte */
+  margin: 4px 2px; /* Margem */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  width: 60px; /* Ajuste a largura */
+  height: 25px; /* Ajuste a altura */
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#logout-btn:hover {
+  background-color: #ce3030; /* Muda a cor ao passar o mouse */
+}

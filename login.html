@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Vídeo de fundo -->
+    <div id="preloader">Carregando...</div>
+
+    <video autoplay muted loop id="background-video" preload="metadata">
+      <source src="hero-video2.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <div class="login-container">
+      <h2>Login</h2>
+
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuário" required />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
