@@ -1,3 +1,9 @@
+// Verifica se o usuário está autenticado
+if (localStorage.getItem("isAuthenticated") !== "true") {
+  // Se não estiver autenticado, redireciona para a página de login
+  window.location.href = "login.html"; // Altere "login.html" para o caminho da sua página de login
+}
+
 // Adiciona eventos
 document.getElementById("add-block-btn").addEventListener("click", async () => {
   const blockName = document.getElementById("block-name").value;
@@ -377,18 +383,3 @@ document
   .addEventListener("click", () => exportToExcel("done"));
 
 // site.js
-
-document.addEventListener("DOMContentLoaded", function () {
-  var logoutBtn = document.getElementById("logout-btn");
-  console.log(logoutBtn); // Para depuração
-
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", function () {
-      console.log("Botão de logout clicado"); // Para depuração
-      localStorage.removeItem("isAuthenticated"); // Remove a chave de autenticação, se estiver usando
-      window.location.href = "login.html"; // Altere "login.html" para o caminho da sua página de login
-    });
-  } else {
-    console.log("Botão de logout não encontrado"); // Para depuração
-  }
-});
