@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Verifica se o usuário está autenticado
 if (localStorage.getItem("isAuthenticated") !== "true") {
   // Se não estiver autenticado, redireciona para a página de login
@@ -25,6 +26,27 @@ document.getElementById("add-block-btn").addEventListener("click", async () => {
   document.getElementById("block-number").value = "";
   document.getElementById("block-note").value = "";
   document.getElementById("block-priority").value = "low";
+=======
+// Adiciona eventos
+document.getElementById("add-block-btn").addEventListener("click", function () {
+  const name = document.getElementById("block-name").value; // Campo nome
+  const number = document.getElementById("block-number").value;
+  const note = document.getElementById("block-note").value;
+  const priority = document.getElementById("block-priority").value;
+
+  if (name && number && note) {
+    // Verifica se o bloco já existe
+    const existingBlock = checkIfBlockExists(name, number);
+    if (!existingBlock) {
+      addBlockToColumn("backlog", name, number, note, priority);
+      saveBlocksToStorage(); // Salva os blocos após adicionar
+    } else {
+      alert("Este bloco já existe.");
+    }
+  } else {
+    alert("Por favor, preencha todos os campos");
+  }
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 });
 
 // Função para verificar se o bloco já existe
@@ -299,6 +321,7 @@ function saveTitle(input, element) {
     element.querySelector("h2").textContent = "Título Padrão"; // Texto padrão, caso fique vazio
   }
 }
+<<<<<<< HEAD
 
 // Função para exportar dados para Excel
 function exportToExcel(columnId) {
@@ -383,3 +406,65 @@ document
   .addEventListener("click", () => exportToExcel("done"));
 
 // site.js
+=======
+function exportToExcel(columnId) {
+  const column = document.getElementById(columnId);
+  if (!column) {
+    alert(`Elemento com ID ${columnId} não encontrado.`);
+    return;
+  }
+
+  const blocks = column.querySelectorAll(".block");
+  const data = [];
+  data.push(["Nome", "Número", "Anotações", "Prioridade"]);
+
+  const getDataFromBlock = (block) => {
+    const name = block
+      .querySelector("p:nth-child(1)")
+      .textContent.replace("Nome: ", "");
+    const number = block
+      .querySelector("p:nth-child(2)")
+      .textContent.replace("Número: ", "");
+    const note = block
+      .querySelector("p:nth-child(3)")
+      .textContent.replace("Anotações: ", "");
+    const priority = block
+      .querySelector("p:nth-child(4)")
+      .textContent.replace("Prioridade: ", "");
+    return [name, number, note, priority];
+  };
+
+  blocks.forEach((block) => {
+    data.push(getDataFromBlock(block));
+  });
+
+  if (data.length > 0) {
+    const worksheet = XLSX.utils.aoa_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Dados");
+    XLSX.writeFile(workbook, `${columnId}_dados.xlsx`);
+  } else {
+    alert("A coluna está vazia.");
+  }
+}
+// site.js
+
+// Verifica se o usuário está autenticado
+if (localStorage.getItem("isAuthenticated") !== "true") {
+  // Se não estiver autenticado, redireciona para a página de login
+  window.location.href = "login.html";
+}
+
+// Função de logout
+document.getElementById("logout-btn").addEventListener("click", function () {
+  // Remove a autenticação
+  localStorage.removeItem("isAuthenticated");
+  // Redireciona para a página de login
+  window.location.href = "login.html";
+});
+// site.js
+if (localStorage.getItem("isAuthenticated") !== "true") {
+  // Se não estiver autenticado, redireciona para a página de login
+  window.location.href = "login.html";
+}
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5

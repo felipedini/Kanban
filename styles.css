@@ -5,8 +5,13 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+<<<<<<< HEAD
   background-color: #121212; /* Fundo escuro para destacar o efeito neon */
   overflow: hidden; /* Remove a barra de rolagem */
+=======
+  background-color: #2e2c2c;
+  overflow: hidden;
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 #background-video {
   position: center;
@@ -22,6 +27,7 @@ body {
 /* Container da logo e título */
 .login-container {
   position: absolute;
+<<<<<<< HEAD
   top: 50%; /* Centraliza verticalmente */
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
@@ -32,20 +38,35 @@ body {
   width: 100%; /* Tornar o container responsivo */
   max-width: 400px;
   max-height: 500px;
+=======
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%; /* Tornar o container responsivo */
+  max-width: 400px;
+  max-height: 500px;
+  background-color: rgba(168, 240, 245, 0.534); /* Fundo semitransparente */
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 .login-container h2 {
   text-align: center;
   margin-bottom: 20px;
+<<<<<<< HEAD
   color: #48d1cc; /* Cor do texto em neon */
   text-shadow: 0 0 10px rgba(72, 209, 204, 0.8),
     0 0 20px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
   margin-top: 5px;
+=======
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 
 input {
   width: 95%;
   padding: 10px;
   margin: 5px 0;
+<<<<<<< HEAD
   border: 1px solid #48d1cc; /* Borda em neon */
   border-radius: 5px;
   z-index: 1;
@@ -57,6 +78,11 @@ input {
 input:focus {
   border-color: #5dec7c; /* Borda em neon ao focar */
   outline: none; /* Remove o contorno padrão */
+=======
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 
 button {
@@ -68,13 +94,19 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px 0;
+<<<<<<< HEAD
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.8), 0 0 20px rgba(72, 209, 204, 0.6); /* Efeito neon no botão */
   transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave */
+=======
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 
 button:hover {
   background-color: #5dec7c;
+<<<<<<< HEAD
   box-shadow: 0 0 20px rgba(72, 209, 204, 1), 0 0 30px rgba(72, 209, 204, 0.8); /* Intensifica o efeito neon ao passar o mouse */
+=======
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
 }
 
 .error-message {
@@ -115,7 +147,10 @@ button:hover {
 
   h2 {
     font-size: 20px; /* Reduzir o tamanho do título em dispositivos móveis */
+<<<<<<< HEAD
     margin-top: 5px;
+=======
+>>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
   }
 }
 @media (max-width: 480px) {
