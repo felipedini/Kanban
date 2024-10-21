@@ -5,7 +5,7 @@
 }
 
 body {
-<<<<<<< HEAD
+
   font-family: "Arial", sans-serif;
   background-color: #121212; /* Fundo escuro para um efeito moderno */
 }
@@ -16,7 +16,7 @@ header {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
-=======
+
   font-family: Arial, sans-serif;
   background-color: #0000;
 }
@@ -26,7 +26,7 @@ header {
   color: rgb(0, 0, 0);
   padding: 1rem;
   text-align: center;
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .kanban-board {
@@ -36,76 +36,76 @@ header {
 }
 
 .column {
-<<<<<<< HEAD
+
   background-color: rgba(20, 20, 20, 0.8);
-=======
+
   background-color: #141414a1;
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   border-radius: 10px;
   width: 15%;
   padding: 1rem;
   max-height: 600px; /* Definindo altura máxima para cada coluna */
   overflow-y: auto; /* Ativa a rolagem vertical */
-<<<<<<< HEAD
+
   box-shadow: 0 0 15px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
   transition: transform 0.3s; /* Transição suave para o efeito de zoom */
 }
 .column:hover {
   transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
 }
-=======
+
 }
 
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 /* Estilizando a barra de rolagem para cada coluna */
 .column::-webkit-scrollbar {
   width: 8px; /* Largura da barra de rolagem */
 }
 
 .column::-webkit-scrollbar-thumb {
-<<<<<<< HEAD
+
   background-color: rgba(72, 209, 204, 0.8); /* Cor da barra de rolagem */
-=======
+
   background-color: #007bff; /* Cor da barra de rolagem */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   border-radius: 10px; /* Bordas arredondadas */
 }
 
 .column::-webkit-scrollbar-track {
-<<<<<<< HEAD
+
   background-color: rgba(
     255,
     255,
     255,
     0.1
   ); /* Cor do trilho da barra de rolagem */
-=======
+
   background-color: #f1f1f1; /* Cor do trilho da barra de rolagem */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .column {
   scrollbar-width: thin; /* Barra de rolagem fina no Firefox */
-<<<<<<< HEAD
+
   scrollbar-color: rgba(72, 209, 204, 0.8) rgba(255, 255, 255, 0.1); /* Cor da barra e do trilho no Firefox */
 =======
   scrollbar-color: #007bff #f1f1f1; /* Cor da barra e do trilho no Firefox */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .column h2 {
   text-align: center;
   margin-bottom: 1rem;
-<<<<<<< HEAD
+
   color: #48d1cc; /* Cor do texto em neon */
   text-shadow: 0 0 5px rgba(72, 209, 204, 0.8), 0 0 10px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
 =======
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .block-container {
   padding: 1rem;
-<<<<<<< HEAD
+
   background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
@@ -114,7 +114,7 @@ header {
 .block {
   background-color: rgba(255, 255, 255, 0.2); /* Fundo semitransparente */
   border: 1px solid rgba(255, 255, 255, 0.3);
-=======
+
   background-color: #fff;
   border-radius: 8px;
 }
@@ -122,13 +122,13 @@ header {
 .block {
   background-color: #fff;
   border: 1px solid #ddd;
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   border-left: 5px solid;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
   cursor: grab;
-<<<<<<< HEAD
+
   transition: transform 0.2s; /* Transição suave */
 }
 
@@ -154,7 +154,7 @@ header {
   margin: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(72, 209, 204, 0.5);
-=======
+
 }
 
 .block.low {
@@ -175,13 +175,13 @@ header {
   margin: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   max-width: 500px;
   margin-left: 200px;
   margin-right: 45%;
   margin-top: 300px;
 }
-<<<<<<< HEAD
+
 
 .add-block.active {
   display: block;
@@ -192,7 +192,7 @@ header {
   margin-bottom: 1rem;
   color: #48d1cc; /* Cor do texto em neon */
   text-shadow: 0 0 5px rgba(72, 209, 204, 0.8), 0 0 10px rgba(72, 209, 204, 0.6); /* Efeito neon no texto */
-=======
+
 /* Exibir a janela quando for necessário */
 .add-block.active {
   display: block;
@@ -200,7 +200,7 @@ header {
 .add-block h3 {
   text-align: center;
   margin-bottom: 1rem;
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .add-block input,
@@ -210,7 +210,7 @@ header {
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.1); /* Fundo dos inputs */
   color: #000000; /* Cor do texto */
@@ -224,7 +224,7 @@ header {
   outline: none; /* Remove o contorno padrão */
 =======
   border: 1px solid #ddd;
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .add-block button {
@@ -235,27 +235,27 @@ header {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-<<<<<<< HEAD
+
   transition: background-color 0.3s, box-shadow 0.3s;
   margin: 0 auto; /* Centraliza o botão */
   display: block; /* Garante que o botão seja tratado como um bloco */
 =======
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .add-block button:hover {
   background-color: #0056b3;
-<<<<<<< HEAD
+
   box-shadow: 0 0 20px rgba(72, 209, 204, 1), 0 0 30px rgba(72, 209, 204, 0.8); /* Intensifica o efeito neon ao passar o mouse */
 =======
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
 
 .add-block {
   position: fixed; /* Deixa o formulário flutuante */
   top: 20px; /* Distância do topo da página */
   right: 20px; /* Distância da direita da página */
-<<<<<<< HEAD
+
   background-color: rgba(30, 30, 30, 0.9); /* Cor de fundo */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borda */
   border-radius: 5px; /* Bordas arredondadas */
@@ -264,7 +264,7 @@ header {
   z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
-=======
+
   background-color: white; /* Cor de fundo */
   border: 1px solid #ccc; /* Borda */
   border-radius: 5px; /* Bordas arredondadas */
@@ -272,7 +272,7 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
   z-index: 1000; /* Garante que fique acima de outros elementos */
 }
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 .column h2 {
   cursor: pointer; /* Indica que o título é clicável */
 }
@@ -281,25 +281,25 @@ header {
   width: 100%;
   font-size: 1.5em;
 }
-<<<<<<< HEAD
+
 
 .export-btn {
   float: left;
   background-color: rgba(83, 122, 163, 0.8);
   color: rgb(255, 255, 255);
-=======
+
 .export-btn {
   float: left;
   background-color: #537aa3b0;
   color: rgb(2, 2, 2);
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   border: 1px;
   border-radius: 60px;
   cursor: pointer;
   margin-bottom: 1rem;
   text-align: center; /* Adiciona essa linha */
   padding: 10px 20px; /* Adiciona essa linha */
-<<<<<<< HEAD
+
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
 }
 
@@ -311,7 +311,7 @@ header {
 
 .edit-btn {
   background-color: rgba(76, 175, 80, 0.8); /* Verde */
-=======
+
 }
 .export-btn:hover {
   background-color: #3957b8a1;
@@ -319,7 +319,7 @@ header {
 }
 .edit-btn {
   background-color: #4caf50; /* Verde */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   color: white; /* Texto branco */
   border: none; /* Sem borda */
   padding: 0; /* Remover espaçamento interno */
@@ -334,7 +334,7 @@ header {
   transition: background-color 0.3s; /* Transição suave */
   width: 60px; /* Ajuste a largura */
   height: 25px; /* Ajuste a altura */
-<<<<<<< HEAD
+
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
 }
 .edit-btn:hover {
@@ -344,14 +344,14 @@ header {
 
 .delete-btn {
   background-color: rgba(244, 67, 54, 0.8); /* Vermelho */
-=======
+
 }
 .edit-btn:hover {
   background-color: #ac29e0; /* Muda a cor ao passar o mouse */
 }
 .delete-btn {
   background-color: #f44336; /* Vermelho */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   float: right;
   color: white; /* Texto branco */
   border: none; /* Sem borda */
@@ -367,7 +367,7 @@ header {
   transition: background-color 0.3s; /* Transição suave */
   width: 60px; /* Ajuste a largura */
   height: 25px; /* Ajuste a altura */
-<<<<<<< HEAD
+
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
 }
 
@@ -378,14 +378,14 @@ header {
 
 #logout-btn {
   background-color: rgba(57, 36, 240, 0.8); /* Azul */
-=======
+
 }
 .delete-btn:hover {
   background-color: #f44336; /* Muda a cor ao passar o mouse */
 }
 #logout-btn {
   background-color: #3924f0; /* Vermelho */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
   color: white; /* Texto branco */
   border: none; /* Sem borda */
   padding: 0; /* Remover espaçamento interno */
@@ -403,7 +403,7 @@ header {
   position: absolute;
   right: 20px;
   top: 20px;
-<<<<<<< HEAD
+
   box-shadow: 0 0 10px rgba(72, 209, 204, 0.5); /* Efeito de sombra suave */
   z-index: 1001; /* Aumenta o z-index para garantir que fique acima de outros elementos */
 }
@@ -421,9 +421,9 @@ header {
 
 .column:hover {
   transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
-=======
+
 }
 #logout-btn:hover {
   background-color: #ce3030; /* Muda a cor ao passar o mouse */
->>>>>>> d0a0f158a3d9bd9e17ecd00c3af0e056ab6fb4f5
+
 }
